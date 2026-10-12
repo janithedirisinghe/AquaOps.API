@@ -1,3 +1,6 @@
 <Solution>
   <Project Path="AquaOps.API.csproj" />
+  <Project Path="AquaOps.Application/AquaOps.Application.csproj" />
+  <Project Path="AquaOps.Domain/AquaOps.Domain.csproj" />
+  <Project Path="AquaOps.Infrastructure/AquaOps.Infrastructure.csproj" />
 </Solution>

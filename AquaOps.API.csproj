@@ -6,8 +6,34 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <!-- Exclude sub-projects from API compilation (they're nested inside this folder) -->
+  <ItemGroup>
+    <Compile Remove="AquaOps.Domain\**" />
+    <Compile Remove="AquaOps.Application\**" />
+    <Compile Remove="AquaOps.Infrastructure\**" />
+    <Content Remove="AquaOps.Domain\**" />
+    <Content Remove="AquaOps.Application\**" />
+    <Content Remove="AquaOps.Infrastructure\**" />
+    <EmbeddedResource Remove="AquaOps.Domain\**" />
+    <EmbeddedResource Remove="AquaOps.Application\**" />
+    <EmbeddedResource Remove="AquaOps.Infrastructure\**" />
+    <None Remove="AquaOps.Domain\**" />
+    <None Remove="AquaOps.Application\**" />
+    <None Remove="AquaOps.Infrastructure\**" />
+  </ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.10">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Scalar.AspNetCore" Version="2.17.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="AquaOps.Application\AquaOps.Application.csproj" />
+    <ProjectReference Include="AquaOps.Infrastructure\AquaOps.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
